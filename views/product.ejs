@@ -1,0 +1,8 @@
+<% if (product) { %>
+  <h1><%= product.name %></h1>
+  <p>Price: $<%= Number(product.price).toFixed(2) %></p>
+<% } else { %>
+  <p>Product not found.</p>
+<% } %>
+
+<a href="/products">Back</a>

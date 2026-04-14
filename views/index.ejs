@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>All Posts</title>
+</head>
+<body>
+
+<h1>All Posts</h1>
+
+<a href="/view/create">Create Post</a>
+
+<% if (posts.length === 0) { %>
+  <p>No posts available</p>
+<% } %>
+
+<% posts.forEach(post => { %>
+  <div style="margin-top:20px;">
+    <h2><%= post.title %></h2>
+    <p><%= post.content %></p>
+
+    <a href="/view/post/<%= post.id %>">View</a> |
+    <a href="/view/edit/<%= post.id %>">Edit</a>
+
+    <form action="/view/delete/<%= post.id %>" method="POST" style="display:inline;">
+      <button type="submit">Delete</button>
+    </form>
+  </div>
+<% }) %>
+
+</body>
+</html>
